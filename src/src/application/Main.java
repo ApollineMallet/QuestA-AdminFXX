@@ -90,7 +90,7 @@ public class Main extends Application {
 		try {
 			// Load the fxml file and create a new stage for the popup dialog.
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource("src/views/EditView.fxml"));
+			loader.setLocation(Main.class.getResource("/src/views/EditView.fxml"));
 			AnchorPane page = (AnchorPane) loader.load();
 
 			// Create the dialog Stage.
