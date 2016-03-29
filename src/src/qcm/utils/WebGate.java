@@ -16,7 +16,7 @@ public class WebGate {
 	private String baseUrl;
 
 	public WebGate() {
-		baseUrl = "http://127.0.0.1:8080/rest-qcm/rest/";
+		baseUrl = "http://127.0.0.1:8080/Q2Base_Rest/rest/";
 		restUrlMappings = new HashMap<>();
 		restUrlMappings.put("Utilisateur", "user");
 	}
@@ -66,11 +66,13 @@ public class WebGate {
 		return HttpUtils.deleteHTML(baseUrl + getControllerUrl(object.getClass()) + "/" + String.valueOf(id));
 	}
 
-	public <T> String add(T object) throws ClientProtocolException, IllegalArgumentException, IllegalAccessException, IOException {
+	public <T> String add(T object)
+			throws ClientProtocolException, IllegalArgumentException, IllegalAccessException, IOException {
 		return HttpUtils.putHTML(baseUrl + getControllerUrl(object.getClass()) + "/add", beanToMap(object));
 	}
 
-	public <T> String update(T object, Object id) throws ClientProtocolException, IllegalArgumentException, IllegalAccessException, IOException {
+	public <T> String update(T object, Object id)
+			throws ClientProtocolException, IllegalArgumentException, IllegalAccessException, IOException {
 		return HttpUtils.postHTML(baseUrl + getControllerUrl(object.getClass()) + "/update/" + id, beanToMap(object));
 	}
 
