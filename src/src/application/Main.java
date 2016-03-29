@@ -78,8 +78,9 @@ public class Main extends Application {
 	}
 
 	/**
-	 * Opens a dialog to edit details for the specified person. If the user clicks OK, the changes are saved into the provided person object
-	 * and true is returned.
+	 * Opens a dialog to edit details for the specified person. If the user
+	 * clicks OK, the changes are saved into the provided person object and true
+	 * is returned.
 	 *
 	 * @param user
 	 *            the person object to be edited
@@ -89,7 +90,7 @@ public class Main extends Application {
 		try {
 			// Load the fxml file and create a new stage for the popup dialog.
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource("src/views/EditView.fxml"));
+			loader.setLocation(Main.class.getResource("/src/views/EditView.fxml"));
 			AnchorPane page = (AnchorPane) loader.load();
 
 			// Create the dialog Stage.
@@ -118,6 +119,14 @@ public class Main extends Application {
 
 	public void handleDelete() {
 		personnViewController.deleteUser();
+	}
+
+	public void handleAdd() {
+		personnViewController.handleAddUser();
+	}
+
+	public void handleUpdate() {
+		personnViewController.handleEditUser();
 	}
 
 	public Main() {

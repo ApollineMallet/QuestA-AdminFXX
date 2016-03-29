@@ -5,8 +5,9 @@ import java.util.concurrent.Callable;
 
 public abstract class SaveOperation implements Callable<Object> {
 	private Object[] datas;
+	private SaveOperationTypes type;
 
-	public SaveOperation(Object... datas) {
+	public SaveOperation(SaveOperationTypes type, Object... datas) {
 		super();
 		this.datas = datas;
 	}
@@ -21,6 +22,14 @@ public abstract class SaveOperation implements Callable<Object> {
 
 	@Override
 	public String toString() {
-		return "SaveOperation [datas=" + Arrays.toString(datas) + "]";
+		return type + " [datas=" + Arrays.toString(datas) + "]";
+	}
+
+	public SaveOperationTypes getType() {
+		return type;
+	}
+
+	public void setType(SaveOperationTypes type) {
+		this.type = type;
 	}
 }
